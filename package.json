@@ -1,0 +1,13 @@
+{
+  "name": "cashia-pay-sdk-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build:pkgs": "pnpm --filter '@cashia/pay-sdk' run build && pnpm --filter '@cashia/pay-sdk-react' run build",
+    "dev": "pnpm build:pkgs && pnpm --filter './apps/**' --parallel run dev",
+    "build": "pnpm build:pkgs && pnpm -r --filter './apps/**' run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
